@@ -1,15 +1,8 @@
 <script lang="ts">
-
-  let contributors: info[] = [
-    {
-        name: "Raul",
-        github: "https://github.com/Raulj123"
-    }
-  ]
-
+import {contributors, totalContributors} from './contributors.ts'
 </script>
 
-
+<h3 style="text-align:center; margin-top:5px; margin-bottom:10px;">Total Contributors {totalContributors}</h3>
 
 <table role="grid" >
   <thead>
@@ -18,18 +11,18 @@
       <th scope="col">GitHub Username</th>
     </tr>
   </thead>
-  {#each contributors as info}
-    <tbody>
-    <td>{info.name}</td>
-    <a href={info.github}>
-    <td>{info.name}'s Github</td>
-      </a>
-    </tbody>
-  {/each}
+  <tbody>
+    {#each contributors as contributor}
+      <tr>
+        <td>{contributor.name}</td>
+        <td>
+          <a href={contributor.github}>
+            {contributor.name}'s Github</a>
+        </td>
+      </tr>
+    {/each}
+  </tbody>
 </table>
-
-
-
 
 
 
