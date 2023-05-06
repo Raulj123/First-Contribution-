@@ -2,6 +2,7 @@
 import {contributors, totalContributors} from './contributors.ts'
 </script>
 
+
 <h3 style="text-align:center; margin-top:5px; margin-bottom:10px;">Total Contributors {totalContributors}</h3>
 
 <table role="grid" >
