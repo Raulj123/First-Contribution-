@@ -8,7 +8,7 @@ import {contributors, totalContributors} from './contributors.ts'
   <thead>
     <tr>
       <th scope="col">Name</th>
-      <th scope="col">GitHub Username</th>
+      <th scope="col">GitHub</th>
     </tr>
   </thead>
   <tbody>
