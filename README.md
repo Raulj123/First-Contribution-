@@ -12,7 +12,7 @@ I made this for anyone who wants to start but is frustrated by the fact that "go
 `npm install` (or `pnpm install` or `yarn`). After you  have installed those, go ahead and install `npm install @picocss/pico`
 5. Make changes! 
 6. Navigate to **src** folder and then click on the routes folder. In there, you should see a file called contributors.ts.
-7. Add the following code(repalce the info with yours of course) in **contributors.ts**
+7. Add the following code(replace the info with yours of course) in **contributors.ts**
 ```
 // contributors add your code below this line
 {
@@ -26,7 +26,7 @@ npm run dev
 ```
 
 
-9. You're done! Do ahead and push your changes bruh :triumph:
+9. You're done! Go ahead and push your changes bruh :triumph:
 
 
 I decided to make this project at 11 PM at night while I was looking for beginner-friendly open source projects. Unfortunately, those are hard to find :disappointed:
