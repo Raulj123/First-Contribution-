@@ -34,7 +34,7 @@
 	}
 	.upper {
 		display: inline-block;
-		color: red;
+		color: green;
 		animation: upper-to 1000ms ease-in-out infinite;
 	}
 	@keyframes upper-to {
