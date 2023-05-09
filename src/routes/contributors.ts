@@ -12,6 +12,10 @@ export const contributors = [
 		name: 'Jungle Deng',
 		github: 'https://github.com/dgjungleP'
 	}
+	,{
+		name:'NepThunder',
+		github: 'https://github.com/NepThunder'
+	}
 ];
 
 export const totalContributors = contributors.length;
