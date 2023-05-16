@@ -16,13 +16,17 @@ export const contributors = [
 		name: 'NepThunder',
 		github: 'https://github.com/NepThunder'
 	},
-	{ 
-    name: 'Yash Shekhar',
-	  github: 'https://github.com/Yash8840'
-	}, 
-  {
-		name:'Nishant Kumar',
+	{
+		name: 'Yash Shekhar',
+		github: 'https://github.com/Yash8840'
+	},
+	{
+		name: 'Nishant Kumar',
 		github: 'https://github.com/NkOffiCiAL07'
+	},
+	{
+		name: 'Batuhan',
+		github: 'https://github.com/Nabzoku'
 	}
 ];
 
