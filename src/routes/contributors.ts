@@ -16,10 +16,11 @@ export const contributors = [
 		name: 'NepThunder',
 		github: 'https://github.com/NepThunder'
 	},
-	{ name: 'Yash Shekhar',
+	{ 
+    name: 'Yash Shekhar',
 	  github: 'https://github.com/Yash8840'
 	}, 
-        {
+  {
 		name:'Nishant Kumar',
 		github: 'https://github.com/NkOffiCiAL07'
 	}
