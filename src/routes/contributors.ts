@@ -27,7 +27,11 @@ export const contributors = [
 	{
 		name: 'Batuhan',
 		github: 'https://github.com/Nabzoku'
-	}
+	},
+  {
+    name: 'Jinson',
+    github: 'https://github.com/FourAndHalf'
+  }
 ];
 
 export const totalContributors = contributors.length;
