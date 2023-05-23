@@ -6,12 +6,13 @@
 	Total Contributors {totalContributors}
 	<div class="upper">↑</div>
 </h3>
-
 <table role="grid">
 	<thead>
 		<tr>
 			<th scope="col">Name</th>
-			<th scope="col">GitHub</th>
+			<th scope="col">
+      <i class="fa-brands fa-github fa-1x"/>
+      GitHub</th>
 		</tr>
 	</thead>
 	<tbody>
