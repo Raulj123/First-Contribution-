@@ -35,6 +35,10 @@ export const contributors = [
 	{
 		name: 'Aditya',
 		github: 'https://github.com/aditya0929'
+	},
+	{
+		name: 'Mohd Mohitur Rahaman',
+		github: 'https://github.com/Mohitur669'
 	}
 ];
 
