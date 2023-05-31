@@ -13,6 +13,10 @@ export const contributors = [
 		github: 'https://github.com/dgjungleP'
 	},
 	{
+		name: 'Manish Kuniyal',
+		github: 'https://github.com/manish0kuniyal'
+	},
+	{
 		name: 'NepThunder',
 		github: 'https://github.com/NepThunder'
 	},
