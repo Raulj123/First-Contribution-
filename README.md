@@ -7,11 +7,20 @@ I made this for anyone who wants to start but is frustrated by the fact that "go
 ## Here are the steps to follow to contribute to this project:
 1. Fork this repo
 2. Navigate to your desktop and clone the repo you just forked 
-3. Make a branch and name it whatever you like
-4. Install dependencies! 
+```
+cd desktop 
+git clone <url>
+cd <repoName>
+```
+3. Install dependencies! 
 `npm install` (or `pnpm install` or `yarn`). After you  have installed those, go ahead and install `npm install @picocss/pico`
+4. Make a branch and name it whatever you like
+```
+git branch <branchName>
+git checkout <branchName>
+```
 5. Make changes! 
-6. Navigate to **src** folder and then click on the routes folder. In there, you should see a file called contributors.ts.
+6. Navigate to **src** folder and then click on the **routes** folder. In there, you should see a file called **contributors.ts**.
 7. Add the following code(replace the info with yours of course) in **contributors.ts**
 ```
 // contributors add your code below this line
@@ -30,3 +39,4 @@ npm run dev
 
 
 I decided to make this project at 11 PM at night while I was looking for beginner-friendly open source projects. Unfortunately, those are hard to find :disappointed:
+
