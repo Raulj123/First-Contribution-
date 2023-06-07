@@ -40,3 +40,13 @@ npm run dev
 
 I decided to make this project at 11 PM at night while I was looking for beginner-friendly open source projects. Unfortunately, those are hard to find :disappointed:
 
+
+
+  ## Contributors 👷 
+  ### Thank you to you all!
+  <a href="https://github.com/Raulj123/First-Contribution-/graphs/contributors">
+    <img src="https://contrib.rocks/image?repo=Raulj123/First-Contribution-"/>
+  </a>
+</div>
+
+
