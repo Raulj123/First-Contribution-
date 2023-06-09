@@ -51,7 +51,11 @@ export const contributors = [
 	{
         name: 'Disha vig',
         github: 'https://github.com/vigdisha'
-},
+	},
+	{
+		name: 'Gabriel',
+		github: 'https://github.com/gjbgpr'
+	},
 ];
 
 export const totalContributors = contributors.length;
