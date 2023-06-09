@@ -45,7 +45,7 @@ I decided to make this project at 11 PM at night while I was looking for beginne
   ## Contributors 👷 
   ### Thank you to you all!
   <a href="https://github.com/Raulj123/First-Contribution-/graphs/contributors">
-    <img src="https://contrib.rocks/image?repo=Raulj123/First-Contribution-"/>
+    <img src="https://contrib.rocks/image?repo=Raulj123/First-Contribution-&max=400&columns=20""/>
   </a>
 </div>
 
