@@ -1,3 +1,6 @@
+//this is an array declaration, where each element is an object with key value pair;
+//key's are name and github and the value is of type string
+
 export const contributors = [
 	{
 		name: 'Raul',
@@ -56,6 +59,10 @@ export const contributors = [
 		name: 'Gabriel',
 		github: 'https://github.com/gjbgpr'
 	},
+	{
+		name: 'Atharve Pandey',
+		github: 'https://github.com/AtharvePandey'
+	},
 ];
 
-export const totalContributors = contributors.length;
+export const totalContributors = contributors.length; //length of the above array depending on how many objects are present...
