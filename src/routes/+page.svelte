@@ -46,4 +46,9 @@
 			transform: translateY(-5px);
 		}
 	}
+  tbody tr:hover {
+  border: 2px solid blue;
+  border-color: hsl(195, 85%, 41%);
+  }
+
 </style>
