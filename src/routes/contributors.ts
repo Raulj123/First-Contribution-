@@ -12,6 +12,10 @@ export const contributors = [
 		github: 'https://github.com/wttc-nitr'
 	},
 	{
+		name: 'Kyaw Zay Ya',
+		github: 'https://github.com/kyawzayya2222'
+	},
+	{
 		name: 'Jungle Deng',
 		github: 'https://github.com/dgjungleP'
 	},
