@@ -1,5 +1,21 @@
 <script lang="ts">
 	import { contributors, totalContributors } from './contributors.ts';
+function getUsernameFromUrl(url: string): string | null {
+  const urlObj = new URL(url);
+  const pathParts = urlObj.pathname.split('/');
+
+  // The username is typically the second part of the path
+  if (pathParts.length >= 2) {
+    const username = pathParts[1];
+    console.log('Extracted username:', username);
+    return `https://avatars.githubusercontent.com/${username}`;
+    } else {
+    console.error('Invalid GitHub profile URL');
+    return null;
+  }
+}
+
+
 </script>
 
 <h3 style="text-align:center; margin-top:5px; margin-bottom:10px;">
@@ -9,15 +25,22 @@
 <table role="grid">
 	<thead>
 		<tr>
+      <th scope="col">Avatar</th>
 			<th scope="col">Name</th>
-			<th scope="col">
+					
+      <th scope="col">
       <i class="fa-brands fa-github fa-1x"/>
-      GitHub</th>
+        GitHub
+      </th> 
+
 		</tr>
 	</thead>
 	<tbody>
 		{#each contributors as contributor}
 			<tr>
+         <td>
+        <img src="{getUsernameFromUrl(contributor.github)}" alt="{contributor.name}'s Avatar">
+      </td>
 				<td>{contributor.name}</td>
 				<td>
 					<a href={contributor.github}> {contributor.name}'s Github</a>
@@ -49,6 +72,11 @@
   tbody tr:hover {
   border: 2px solid blue;
   border-color: hsl(195, 85%, 41%);
+  }
+  img {
+    width: 45px;
+    height: 45px;
+    border-radius:10px;
   }
 
 </style>
