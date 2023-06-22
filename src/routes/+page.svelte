@@ -1,82 +1,54 @@
 <script lang="ts">
-	import { contributors, totalContributors } from './contributors.ts';
-function getUsernameFromUrl(url: string): string | null {
-  const urlObj = new URL(url);
-  const pathParts = urlObj.pathname.split('/');
+	import { contributors } from './contributors';
+	import Icon from '@iconify/svelte';
+	let isList = true;
 
-  // The username is typically the second part of the path
-  if (pathParts.length >= 2) {
-    const username = pathParts[1];
-    console.log('Extracted username:', username);
-    return `https://avatars.githubusercontent.com/${username}`;
-    } else {
-    console.error('Invalid GitHub profile URL');
-    return null;
-  }
-}
-
-
+	function handleGrid() {
+		isList ? (isList = false) : (isList = true);
+	}
 </script>
 
-<h3 style="text-align:center; margin-top:5px; margin-bottom:10px;">
-	Total Contributors {totalContributors}
-	<div class="upper">↑</div>
-</h3>
-<table role="grid">
-	<thead>
-		<tr>
-      <th scope="col">Avatar</th>
-			<th scope="col">Name</th>
-					
-      <th scope="col">
-      <i class="fa-brands fa-github fa-1x"/>
-        GitHub
-      </th> 
+<section class="xl:container mx-auto">
+	<header class=" flex justify-between items-center p-3">
+		<h2 class="text-black dark:text-white font-medium">
+			Total contributor <span class="text-sm">{contributors.length}</span>
+		</h2>
+		<button type="button" class="w-fit border-none" on:click={handleGrid}>
+			{#if isList}
+				<Icon icon="ri:grid-fill" />
+			{:else}
+				<Icon icon="fa-solid:list" />
+			{/if}
+		</button>
+	</header>
+	<hr class="border-slate-500/10" />
 
-		</tr>
-	</thead>
-	<tbody>
+	<ul class={`grid ${!isList ? 'md:grid-cols-2' : 'grid-cols-1'}`}>
 		{#each contributors as contributor}
-			<tr>
-         <td>
-        <img src="{getUsernameFromUrl(contributor.github)}" alt="{contributor.name}'s Avatar">
-      </td>
-				<td>{contributor.name}</td>
-				<td>
-					<a href={contributor.github}> {contributor.name}'s Github</a>
-				</td>
-			</tr>
+			<li
+				class="flex gap-3 p-3 hover:bg-slate-100 dark:hover:bg-slate-900 m-0 items-center group"
+				title={contributor.name}
+			>
+				<figure class="shadow-lg shadow-transparent group-hover:shadow-slate-500 rounded-full">
+					<img
+						src={`https://avatars.githubusercontent.com/${contributor.github.split('/').at(-1)}`}
+						alt="{contributor.name}'s Avatar"
+						class="w-16 aspect-square object-cover rounded-full"
+					/>
+				</figure>
+				<p class="w-full text-slate-800 dark:text-slate-200">
+					{contributor.name}
+					<span class="block text-xs opacity-50">@{contributor.github.split('/').at(-1)}</span>
+				</p>
+				<a
+					href={contributor.github}
+					title={`Go to ${contributor.name}'s profile`}
+					class="flex items-center gap-2 text-sm text-slate-800 dark:text-slate-200 opacity-50 hover:opacity-100"
+				>
+					GitHub
+					<Icon icon="charm:link-external" class="" />
+				</a>
+			</li>
 		{/each}
-	</tbody>
-</table>
-
-<style>
-	table {
-		width: 50%;
-		margin-left: auto;
-		margin-right: auto;
-	}
-	.upper {
-		display: inline-block;
-		color: green;
-		animation: upper-to 1000ms ease-in-out infinite;
-	}
-	@keyframes upper-to {
-		0% {
-			transform: translateY(0px);
-		}
-		100% {
-			transform: translateY(-5px);
-		}
-	}
-  tbody tr:hover {
-  border: 2px solid blue;
-  border-color: hsl(195, 85%, 41%);
-  }
-  img {
-    width: 45px;
-    height: 45px;
-    border-radius:10px;
-  }
-
-</style>
+	</ul>
+</section>

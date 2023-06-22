@@ -9,7 +9,7 @@ export const contributors = [
 	// contributors add your code below this line
 	{
 		name: 'Baliram Singh',
-		github: 'https://github.com/0mee9a'
+		github: 'https://github.com/0me9a'
 	},
 	{
 		name: 'Animesh Kumar',
