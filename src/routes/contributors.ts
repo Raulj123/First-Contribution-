@@ -8,6 +8,10 @@ export const contributors = [
 	},
 	// contributors add your code below this line
 	{
+		name: 'Baliram Singh',
+		github: 'https://github.com/0mee9a'
+	},
+	{
 		name: 'Animesh Kumar',
 		github: 'https://github.com/wttc-nitr'
 	},
