@@ -1,12 +1,22 @@
 //this is an array declaration, where each element is an object with key value pair;
 //key's are name and github and the value is of type string
 
-export const contributors = [
+export interface contributorFace {
+	name: string;
+	github: string;
+}
+
+
+export const contributors: contributorFace[] = [
 	{
 		name: 'Raul',
 		github: 'https://github.com/Raulj123'
 	},
 	// contributors add your code below this line
+	{
+		name: 'Baliram Singh',
+		github: 'https://github.com/0me9a'
+	},
 	{
 		name: 'Animesh Kumar',
 		github: 'https://github.com/wttc-nitr'
@@ -56,8 +66,8 @@ export const contributors = [
 		github: 'https://github.com/akindoju'
 	},
 	{
-        name: 'Disha vig',
-        github: 'https://github.com/vigdisha'
+		name: 'Disha vig',
+		github: 'https://github.com/vigdisha'
 	},
 	{
 		name: 'Gabriel',

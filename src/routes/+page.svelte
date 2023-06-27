@@ -1,82 +1,61 @@
 <script lang="ts">
-	import { contributors, totalContributors } from './contributors.ts';
-function getUsernameFromUrl(url: string): string | null {
-  const urlObj = new URL(url);
-  const pathParts = urlObj.pathname.split('/');
+	import UserInfo from '../Components/UserInfo.svelte';
+	import Users from '../Components/Users.svelte';
+	import Icon from '@iconify/svelte';
+	import { contributors, type contributorFace } from '../Data/contributors';
+	import { onMount } from 'svelte';
 
-  // The username is typically the second part of the path
-  if (pathParts.length >= 2) {
-    const username = pathParts[1];
-    console.log('Extracted username:', username);
-    return `https://avatars.githubusercontent.com/${username}`;
-    } else {
-    console.error('Invalid GitHub profile URL');
-    return null;
-  }
-}
+	let isList: boolean = true;
+	let user: contributorFace[] | null | undefined = null;
 
+	function handleUerInfoWin(event: any) {
+		user = event.detail;
+	}
 
+	function handleGrid() {
+		isList ? (isList = false) : (isList = true);
+	}
+
+	function isUserValid() {
+		const check_user = contributors.filter((item) => {
+			const savedUserId = item.github.split('/').at(-1);
+			const urlUserId = window.location.hash.replaceAll('#', '');
+			if (savedUserId === urlUserId) {
+				return item;
+			}
+		});
+		return check_user;
+	}
+
+	onMount(() => {
+		user = isUserValid();
+		const handleURLChange = () => {
+			user = isUserValid();
+		};
+		window.addEventListener('popstate', handleURLChange);
+		return () => {
+			window.removeEventListener('popstate', handleURLChange);
+		};
+	});
 </script>
 
-<h3 style="text-align:center; margin-top:5px; margin-bottom:10px;">
-	Total Contributors {totalContributors}
-	<div class="upper">↑</div>
-</h3>
-<table role="grid">
-	<thead>
-		<tr>
-      <th scope="col">Avatar</th>
-			<th scope="col">Name</th>
-					
-      <th scope="col">
-      <i class="fa-brands fa-github fa-1x"/>
-        GitHub
-      </th> 
+<section class="xl:container mx-auto">
+	<header class=" flex justify-between items-center p-3">
+		<h2 class="text-black dark:text-white font-medium">
+			Total contributor <span class="text-sm">{contributors.length}</span>
+		</h2>
+		<button type="button" class="w-fit border-none focus:ring-2" on:click={handleGrid}>
+			{#if isList}
+				<Icon icon="ri:grid-fill" />
+			{:else}
+				<Icon icon="fa-solid:list" />
+			{/if}
+		</button>
+	</header>
+	<hr class="border-slate-500/10" />
+	<Users {isList} {contributors} />
 
-		</tr>
-	</thead>
-	<tbody>
-		{#each contributors as contributor}
-			<tr>
-         <td>
-        <img src="{getUsernameFromUrl(contributor.github)}" alt="{contributor.name}'s Avatar">
-      </td>
-				<td>{contributor.name}</td>
-				<td>
-					<a href={contributor.github}> {contributor.name}'s Github</a>
-				</td>
-			</tr>
-		{/each}
-	</tbody>
-</table>
-
-<style>
-	table {
-		width: 50%;
-		margin-left: auto;
-		margin-right: auto;
-	}
-	.upper {
-		display: inline-block;
-		color: green;
-		animation: upper-to 1000ms ease-in-out infinite;
-	}
-	@keyframes upper-to {
-		0% {
-			transform: translateY(0px);
-		}
-		100% {
-			transform: translateY(-5px);
-		}
-	}
-  tbody tr:hover {
-  border: 2px solid blue;
-  border-color: hsl(195, 85%, 41%);
-  }
-  img {
-    width: 45px;
-    height: 45px;
-    border-radius:10px;
-  }
-
-</style>
+	{#if user && user.length > 0}
+		<UserInfo contributors={user} on:nameChange={handleUerInfoWin} />
+	{/if}
+</section>
