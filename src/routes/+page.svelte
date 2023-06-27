@@ -1,11 +1,42 @@
 <script lang="ts">
-	import { contributors } from './contributors';
+	import UserInfo from '../Components/UserInfo.svelte';
+	import Users from '../Components/Users.svelte';
 	import Icon from '@iconify/svelte';
-	let isList = true;
+	import { contributors, type contributorFace } from '../Data/contributors';
+	import { onMount } from 'svelte';
+
+	let isList: boolean = true;
+	let user: contributorFace[] | null | undefined = null;
+
+	function handleUerInfoWin(event: any) {
+		user = event.detail;
+	}
 
 	function handleGrid() {
 		isList ? (isList = false) : (isList = true);
 	}
+
+	function isUserValid() {
+		const check_user = contributors.filter((item) => {
+			const savedUserId = item.github.split('/').at(-1);
+			const urlUserId = window.location.hash.replaceAll('#', '');
+			if (savedUserId === urlUserId) {
+				return item;
+			}
+		});
+		return check_user;
+	}
+
+	onMount(() => {
+		user = isUserValid();
+		const handleURLChange = () => {
+			user = isUserValid();
+		};
+		window.addEventListener('popstate', handleURLChange);
+		return () => {
+			window.removeEventListener('popstate', handleURLChange);
+		};
+	});
 </script>
 
 <section class="xl:container mx-auto">
@@ -13,7 +44,7 @@
 		<h2 class="text-black dark:text-white font-medium">
 			Total contributor <span class="text-sm">{contributors.length}</span>
 		</h2>
-		<button type="button" class="w-fit border-none" on:click={handleGrid}>
+		<button type="button" class="w-fit border-none focus:ring-2" on:click={handleGrid}>
 			{#if isList}
 				<Icon icon="ri:grid-fill" />
 			{:else}
@@ -22,33 +53,9 @@
 		</button>
 	</header>
 	<hr class="border-slate-500/10" />
+	<Users {isList} {contributors} />
 
-	<ul class={`grid ${!isList ? 'md:grid-cols-2' : 'grid-cols-1'}`}>
-		{#each contributors as contributor}
-			<li
-				class="flex gap-3 p-3 hover:bg-slate-100 dark:hover:bg-slate-900 m-0 items-center group"
-				title={contributor.name}
-			>
-				<figure class="shadow-lg shadow-transparent group-hover:shadow-slate-500 rounded-full">
-					<img
-						src={`https://avatars.githubusercontent.com/${contributor.github.split('/').at(-1)}`}
-						alt="{contributor.name}'s Avatar"
-						class="w-16 aspect-square object-cover rounded-full"
-					/>
-				</figure>
-				<p class="w-full text-slate-800 dark:text-slate-200">
-					{contributor.name}
-					<span class="block text-xs opacity-50">@{contributor.github.split('/').at(-1)}</span>
-				</p>
-				<a
-					href={contributor.github}
-					title={`Go to ${contributor.name}'s profile`}
-					class="flex items-center gap-2 text-sm text-slate-800 dark:text-slate-200 opacity-50 hover:opacity-100"
-				>
-					GitHub
-					<Icon icon="charm:link-external" class="" />
-				</a>
-			</li>
-		{/each}
-	</ul>
+	{#if user && user.length > 0}
+		<UserInfo contributors={user} on:nameChange={handleUerInfoWin} />
+	{/if}
 </section>

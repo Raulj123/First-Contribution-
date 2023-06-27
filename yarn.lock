@@ -1575,6 +1575,11 @@
     "sorcery" "^0.11.0"
     "strip-indent" "^3.0.0"
 
+"svelte-routing@^1.10.0":
+  "integrity" "sha512-ZYQEj7FK03iVHpzNg1Uk7svlD8siFks0a+IPUxn7ckaEL7H1uQl17gTdYRMjuEw2f7ZtgE77l6WDjmGql14JbA=="
+  "resolved" "https://registry.npmjs.org/svelte-routing/-/svelte-routing-1.10.0.tgz"
+  "version" "1.10.0"
+
 "svelte@*", "svelte@^3.2.0", "svelte@^3.23.0", "svelte@^3.37.0", "svelte@^3.54.0", "svelte@^3.55.0", "svelte@>=3.19.0":
   "integrity" "sha512-brIBNNB76mXFmU/Kerm4wFnkskBbluBDCjx/8TcpYRb298Yh2dztS2kQ6bhtjMcvUhd5ynClfwpz5h2gnzdQ1A=="
   "resolved" "https://registry.npmjs.org/svelte/-/svelte-3.58.0.tgz"
