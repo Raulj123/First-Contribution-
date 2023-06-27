@@ -4,6 +4,7 @@
 	import Icon from '@iconify/svelte';
 	import { contributors, type contributorFace } from '../Data/contributors';
 	import { onMount } from 'svelte';
+	import Meta from '../Meta/Meta.svelte';
 
 	let isList: boolean = true;
 	let user: contributorFace[] | null | undefined = null;
@@ -38,6 +39,10 @@
 		};
 	});
 </script>
+
+{#if !user || user.length === 0}
+	<Meta />
+{/if}
 
 <section class="xl:container mx-auto">
 	<header class=" flex justify-between items-center p-3">
