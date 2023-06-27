@@ -42,7 +42,7 @@
 <section class="xl:container mx-auto">
 	<header class=" flex justify-between items-center p-3">
 		<h2 class="text-black dark:text-white font-medium">
-			Total contributor <span class="text-sm">{contributors.length}</span>
+			Total contributors <span class="text-sm">{contributors.length}</span>
 		</h2>
 		<button type="button" class="w-fit border-none focus:ring-2" on:click={handleGrid}>
 			{#if isList}
