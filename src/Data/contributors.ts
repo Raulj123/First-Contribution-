@@ -9,6 +9,10 @@ export interface contributorFace {
 
 export const contributors: contributorFace[] = [
 	{
+		name: 'Lee Bingler',
+		github: 'https://github.com/LeeBingler'
+	},
+	{
 		name: 'Raul',
 		github: 'https://github.com/Raulj123'
 	},
