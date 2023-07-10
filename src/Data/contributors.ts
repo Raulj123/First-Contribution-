@@ -6,12 +6,7 @@ export interface contributorFace {
 	github: string;
 }
 
-
 export const contributors: contributorFace[] = [
-	{
-		name: 'Lee Bingler',
-		github: 'https://github.com/LeeBingler'
-	},
 	{
 		name: 'Raul',
 		github: 'https://github.com/Raulj123'
@@ -81,6 +76,10 @@ export const contributors: contributorFace[] = [
 		name: 'Atharve Pandey',
 		github: 'https://github.com/AtharvePandey'
 	},
+	{
+		name: 'Lee Bingler',
+		github: 'https://github.com/LeeBingler'
+	}
 ];
 
 export const totalContributors = contributors.length; //length of the above array depending on how many objects are present...
