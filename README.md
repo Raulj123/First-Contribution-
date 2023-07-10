@@ -13,14 +13,14 @@ git clone <url>
 cd <repoName>
 ```
 3. Install dependencies! 
-`npm install` (or `pnpm install` or `yarn`). After you  have installed those, go ahead and install `npm install @picocss/pico`
+`npm install` (or `pnpm install` or `yarn`). After you  have installed those, go ahead and install `npm install @picocss/pico` and `npm install tailwindcss`
 4. Make a branch and name it whatever you like
 ```
 git branch <branchName>
 git checkout <branchName>
 ```
 5. Make changes! 
-6. Navigate to **src** folder and then click on the **routes** folder. In there, you should see a file called **contributors.ts**.
+6. Navigate to **src** directory and then click on the **Data** directory. In there, you should see a file called **contributors.ts**.
 7. Add the following code(replace the info with yours of course) in **contributors.ts**
 ```
 // contributors add your code below this line
