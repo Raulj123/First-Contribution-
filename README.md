@@ -47,6 +47,8 @@ I decided to make this project at 11 PM at night while I was looking for beginne
   <a href="https://github.com/Raulj123/First-Contribution-/graphs/contributors">
     <img src="https://contrib.rocks/image?repo=Raulj123/First-Contribution-&max=400&columns=20""/>
   </a>
-</div>
+
+## Star History :📈
+[![Star History Chart](https://api.star-history.com/svg?repos=Raulj123/First-Contribution-&type=Date)](https://star-history.com/#Raulj123/First-Contribution-&Date)
 
 
