@@ -13,6 +13,10 @@ export const contributors: contributorFace[] = [
 	},
 	// contributors add your code below this line
 	{
+		name: 'Yuvraj',
+		github: 'https://github.com/Yuvraj-26'
+	},
+	{
 		name: 'Baliram Singh',
 		github: 'https://github.com/0me9a'
 	},
