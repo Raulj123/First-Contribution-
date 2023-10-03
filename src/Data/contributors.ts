@@ -21,6 +21,10 @@ export const contributors: contributorFace[] = [
 		github: 'https://github.com/wttc-nitr'
 	},
 	{
+		name: 'Nishant Khatri',
+		github: 'https://github.com/Nishant-Khatri'
+	},
+	{
 		name: 'Kyaw Zay Ya',
 		github: 'https://github.com/kyawzayya2222'
 	},
