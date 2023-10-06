@@ -1,1 +1,24 @@
+name: First interaction
 
+on:
+  issues:
+    types:
+      - opened
+  pull_request_target:
+    types:
+      - opened
+
+jobs:
+  first-interaction:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      - name: First Interaction
+        uses: actions/first-interaction@v1.2.0
+        with:
+          repo-token: ${{ secrets.GH_T }}
+          issue-message: "Thanks for the issue 🙏"
+          pr-message: "🎉 Congratulations! 🎉 on your first PR!"
