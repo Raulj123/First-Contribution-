@@ -83,6 +83,9 @@ export const contributors: contributorFace[] = [
 	{
 		name: 'Lee Bingler',
 		github: 'https://github.com/LeeBingler'
+	},{
+		name:'Subhanshu jha',
+		github:'https://github.com/subhanahujha007'
 	}
 ];
 
