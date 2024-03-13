@@ -18,7 +18,7 @@ git clone <url>
 cd <repoName>
 ```
 3. Install dependencies! 
-`npm install` (or `pnpm install` or `yarn`). After you  have installed those, go ahead and install `npm install @picocss/pico` and `npm install tailwindcss`
+`npm install` (or `pnpm install` or `yarn`).
 4. Create a branch
 ```
 git branch <branchName>
@@ -46,13 +46,11 @@ npm run dev
 I decided to make this project at 11 PM at night while I was looking for beginner-friendly open source projects. Unfortunately, those are hard to find :disappointed:
 
 
-
-  ## Contributors 👷 
-  <a href="https://github.com/Raulj123/First-Contribution-/graphs/contributors">
-    <img src="https://contrib.rocks/image?repo=Raulj123/First-Contribution-&max=400&columns=20""/>
-  </a>
-
 ## Star History :📈
 [![Star History Chart](https://api.star-history.com/svg?repos=Raulj123/First-Contribution-&type=Date)](https://star-history.com/#Raulj123/First-Contribution-&Date)
 
 
+## Contributors 👷 
+  <a href="https://github.com/Raulj123/First-Contribution-/graphs/contributors">
+    <img src="https://contrib.rocks/image?repo=Raulj123/First-Contribution-&max=400&columns=20""/>
+  </a>
